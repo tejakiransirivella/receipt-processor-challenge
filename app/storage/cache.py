@@ -11,8 +11,11 @@ class Cache:
         if session_id is None:
             session_id = Cache.generate_session_id()
             Cache.info[session_id] = User(session_id)
-       
+
+        if session_id not in Cache.info:
+            return None
         return Cache.info[session_id]
+        
 
     @staticmethod
     def generate_session_id():

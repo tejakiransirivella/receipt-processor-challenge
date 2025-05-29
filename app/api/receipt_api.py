@@ -19,6 +19,8 @@ def process_receipt():
 @points_bp.route('/receipts/<id>/points',methods = ['GET'])
 def get_points(id):
     user:User = Cache.get_user_cache(id)
+    if user is None:
+        return jsonify({"error":"Receipt not found for given Id"}), 404
     receipt_service:ReceiptService = ReceiptService(user.receipt)
     user.points = receipt_service.calculate_total_points()
     return jsonify({"points":user.points})
