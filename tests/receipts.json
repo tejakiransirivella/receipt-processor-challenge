@@ -135,5 +135,47 @@
       ]
     },
     "expected_points": 52
+  },
+  {
+    "receipt":{
+      "retailer": "T&J Mega-Mart",
+      "purchaseDate": "2022-01-11",
+      "purchaseTime": "14:45",
+      "total": "33.00",
+      "items": [
+        {"shortDescription": "Blue Apples", "price": "5.00"},
+        {"shortDescription": "Zinc Tablets", "price": "7.00"},
+        {"shortDescription": "Milk", "price": "3.00"},
+        {"shortDescription": "Granola Bars", "price": "9.00"},
+        {"shortDescription": "Bread", "price": "4.00"},
+        {"shortDescription": "Eggs", "price": "5.00"}
+      ]
+    },
+    "expected_points":120
+  },
+  {
+    "receipt":{
+    "retailer": "Walgreens",
+    "purchaseDate": "2022-01-02",
+    "purchaseTime": "08:13",
+    "total": "2.65",
+    "items": [
+        {"shortDescription": "Pepsi - 12-oz", "price": "1.25"},
+        {"shortDescription": "Dasani", "price": "1.40"}
+    ]
+   },
+   "expected_points":15 
+  },
+  {
+    "receipt":{
+      "retailer": "Target",
+      "purchaseDate": "2022-01-02",
+      "purchaseTime": "13:13",
+      "total": "1.25",
+      "items": [
+          {"shortDescription": "Pepsi - 12-oz", "price": "1.25"}
+      ]
+    },
+    "expected_points":31
   }
 ]

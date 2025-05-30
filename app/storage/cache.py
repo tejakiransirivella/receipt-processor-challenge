@@ -3,6 +3,9 @@ from app.storage.user import User
 from app.models.receipt import Receipt
 
 class Cache:
+    """
+    Cache class to manage user sessions and their associated data.
+    """
 
     info = {}
 
@@ -21,10 +24,3 @@ class Cache:
     def generate_session_id():
         session_id = str(uuid.uuid4())
         return session_id
-    
-def main():
-    pass
-
-
-if __name__ == "__main__":
-    main()

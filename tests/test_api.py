@@ -3,12 +3,18 @@ import pytest
 import json
 
 
+'''
+load test data from receipts.json file.
+'''
 def load_test_data(path = "tests/receipts.json"):
     with open(path, 'r') as file:
         data = json.load(file)
     return [(entry['receipt'], entry['expected_points']) for entry in data]
 
 
+'''
+create test client for the Flask app and this injects client into the test functions.
+'''
 @pytest.fixture
 def client():
     app = create_app()
@@ -17,6 +23,9 @@ def client():
         yield client
         
 
+'''
+Test cases for the receipt processing API.
+'''
 @pytest.mark.parametrize("receipt,expected_points", load_test_data())
 def test_receipt_process(client, receipt, expected_points):
     
@@ -36,6 +45,9 @@ def test_receipt_process(client, receipt, expected_points):
     assert points == expected_points
 
 
+'''
+Test case for invalid receipt ID.
+'''
 def test_invalid_receipt_id(client):
     id = "c6a6b488-124f-4c4e-9b6a-0273e0443b46"
     res = client.get(f'/receipts/{id}/points')
